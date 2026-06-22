@@ -1,4 +1,4 @@
-public class Correntista {
+public  abstract class Correntista {
 
     private static int proxCodigo = 1;
     // Variável estática para gerar códigos únicos
@@ -11,10 +11,7 @@ public class Correntista {
         this.nome = nome;
 
     }
-    public void exibeIdentificacao() {
-        System.out.println("Eu sou um correntista" + getCodigo()  + " - " + getNome());
-
-    }
+    public abstract void exibeIdentificacao();
 
     public static int getProxCodigo() {
         return proxCodigo++;
