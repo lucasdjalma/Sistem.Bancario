@@ -14,13 +14,13 @@ public class ContaJuridica implements Conta {
     }
 
     @Override
-    public void extrato() {
+    public synchronized void extrato() {
         System.out.println("Extrato da conta jurídica de " + correntista.getNome() + ":");
         System.out.println("Saldo: R$ " + saldo);
     }
 
     @Override
-    public void depositar(double valor) {
+    public synchronized void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
             System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
@@ -29,17 +29,7 @@ public class ContaJuridica implements Conta {
         }
     }
 
-    public void saque(double valor) {
-        if (valor > 0 && valor <= saldo) {
-            saldo -= valor;
-            System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
-        } else {
-            System.out.println("Saldo insuficiente ou valor inválido para saque.");
-        }
-    }
-
-    @Override
-    public void sacar(double valor) {
+    public synchronized void saque(double valor) {
         if (valor > 0 && valor <= saldo) {
             saldo -= valor;
             System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
