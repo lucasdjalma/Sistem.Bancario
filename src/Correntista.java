@@ -6,14 +6,14 @@ public class Correntista {
     private int Codigo;
     private String nome;
 
+    public static int getProxCodigo() {
+        return proxCodigo++;
+    }
+
     public Correntista(String nome) {
         this.nome = nome;
         this.Codigo = getProxCodigo();
 
-    }
-
-    public static int getProxCodigo() {
-        return proxCodigo++;
     }
 
     // Getters and setters
