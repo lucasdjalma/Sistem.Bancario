@@ -1,20 +1,21 @@
 public class Correntista {
 
+    private static int proxCodigo = 1;
+    // Variável estática para gerar códigos únicos
+
     private int Codigo;
     private String nome;
 
-    public Correntista(int Codigo, String nome) {
-        this.Codigo = Codigo;
+    public Correntista(String nome) {
         this.nome = nome;
+        this.Codigo = proxCodigo;
+        proxCodigo++;
+
     }
 
     // Getters and setters
     public int getCodigo() {
         return Codigo;
-    }
-
-    public void setCodigo(int Codigo) {
-        this.Codigo = Codigo;
     }
 
     public String getNome() {
