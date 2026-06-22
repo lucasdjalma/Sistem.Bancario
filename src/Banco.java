@@ -18,10 +18,11 @@ public class Banco {
         CorrentistaJuridico cJuridico = new CorrentistaJuridico("Empresa XYZ", "Pedro Almeida");
         listaDeClientes.add(cJuridico);
 
-        for (Correntista cliente : listaDeClientes) {
-            System.out.println("Código: " + cliente.getCodigo());
-            System.out.println("Nome: " + cliente.getNome());
-        }
+        c1.exibeIdentificacao();
+        c2.exibeIdentificacao();
+        c3.exibeIdentificacao();
+        c4.exibeIdentificacao();
+        cJuridico.exibeIdentificacao();
     }
 
 

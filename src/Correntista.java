@@ -6,14 +6,18 @@ public class Correntista {
     private int Codigo;
     private String nome;
 
-    public static int getProxCodigo() {
-        return proxCodigo++;
+    public Correntista(String nome) {
+        this.Codigo = getProxCodigo(); // Atribui o código único e incrementa para o próximo
+        this.nome = nome;
+
+    }
+    public void exibeIdentificacao() {
+        System.out.println("Eu sou um correntista" + getCodigo()  + " - " + getNome());
+
     }
 
-    public Correntista(String nome) {
-        this.nome = nome;
-        this.Codigo = getProxCodigo();
-
+    public static int getProxCodigo() {
+        return proxCodigo++;
     }
 
     // Getters and setters

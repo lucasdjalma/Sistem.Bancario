@@ -4,6 +4,7 @@ public class CorrentistaJuridico extends Correntista {
     public CorrentistaJuridico(String nome, String nomeResponsavel) {
         super(nome);
         this.nomeResponsavel = nomeResponsavel;
+
     }
     public String getNomeResponsavel() {
         return nomeResponsavel;
@@ -12,4 +13,9 @@ public class CorrentistaJuridico extends Correntista {
     public void setNomeResponsavel(String nomeResponsavel) {
         this.nomeResponsavel = nomeResponsavel;
     }
-}
+    @Override
+        public void exibeIdentificacao() {
+            System.out.println("Eu sou um correntista" + getCodigo()  + " - " + getNome());
+
+        }
+    }
