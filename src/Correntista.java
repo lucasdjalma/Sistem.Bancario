@@ -3,10 +3,16 @@ public class Correntista {
     private int Codigo;
     private String nome;
 
+    public Correntista() {
+        this.Codigo = 0;
+        this.nome = "";
+    }
+
     public Correntista(int Codigo, String nome) {
         this.Codigo = Codigo;
         this.nome = nome;
     }
+
 
     // Getters and setters
     public int getCodigo() {
