@@ -1,4 +1,6 @@
-public  abstract class Correntista {
+import java.io.Serializable;
+
+public  abstract class Correntista implements Serializable {
 
     private static int proxCodigo = 1;
 

@@ -1,4 +1,6 @@
-public interface Conta {
+import java.io.Serializable;
+
+public interface Conta extends Serializable {
 
     public void extrato();
     public void depositar(double valor);
