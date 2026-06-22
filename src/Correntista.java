@@ -8,9 +8,12 @@ public class Correntista {
 
     public Correntista(String nome) {
         this.nome = nome;
-        this.Codigo = proxCodigo;
-        proxCodigo++;
+        this.Codigo = getProxCodigo();
 
+    }
+
+    public static int getProxCodigo() {
+        return proxCodigo++;
     }
 
     // Getters and setters
