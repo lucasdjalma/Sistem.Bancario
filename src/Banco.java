@@ -23,6 +23,9 @@ public class Banco {
         c3.exibeIdentificacao();
         c4.exibeIdentificacao();
         cJuridico.exibeIdentificacao();
+
+       double valor = c1.getConta().simulaEmpréstimo(1000.0, 12);
+       System.out.println("Valor simulado para empréstimo: R$ " + valor);
     }
 
 

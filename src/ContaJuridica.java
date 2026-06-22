@@ -2,6 +2,7 @@ public class ContaJuridica implements Conta {
 
     private CorrentistaJuridico correntista;
     private double saldo;
+    public static final double I = 0.05; // Taxa de juros
 
     public ContaJuridica(CorrentistaJuridico correntista) {
         this.correntista = correntista;
@@ -28,7 +29,6 @@ public class ContaJuridica implements Conta {
         }
     }
 
-    @Override
     public void saque(double valor) {
         if (valor > 0 && valor <= saldo) {
             saldo -= valor;
@@ -47,4 +47,8 @@ public class ContaJuridica implements Conta {
             System.out.println("Saldo insuficiente ou valor inválido para saque.");
         }
     }
+    public double simulaEmpréstimo(double cf, int n) {
+        return I/(1-1/Math.pow(1+I,n))*cf;
+    }
+
 }

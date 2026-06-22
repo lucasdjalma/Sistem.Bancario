@@ -2,6 +2,7 @@ public class ContaFisica implements Conta {
 
     private CorrentistaFisico correntista;
     private double saldo;
+    private static final double I = 0.03; // Taxa de juros
 
     public ContaFisica(CorrentistaFisico correntista) {
         this.correntista = correntista;
@@ -40,6 +41,16 @@ public class ContaFisica implements Conta {
 
     @Override
     public void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
+        } else {
+            System.out.println("Saldo insuficiente ou valor inválido para saque.");
+        }
+    }
 
+    @Override
+    public double simulaEmpréstimo(double cf, int n) {
+        return I/(1-1/Math.pow(1+I,n))*cf;
     }
 }
